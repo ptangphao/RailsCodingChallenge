@@ -96,6 +96,19 @@ describe Cuboid do
   end
 
   context "#intersects?" do
+    it "returns true if the object and the provided object intersect" do
+        let(:cuboid_one) {Cuboid.new({'x'=> 1,'y'=> 1, 'z'=> 1, 'length' => 5, 'height' => 6, 'width' => 7})}  
+        let(:cuboid_two) {Cuboid.new({'x'=> 2,'y'=> 2, 'z'=> 0, 'length' => 2, 'height' => 2, 'width' => 10})}
+        expect(cuboid_one.intersects?(cuboid_two)).to be_true  
+        expect(cuboid_two.intersects?(cuboid_one)).to be_true  
+    end
+
+    it "returns false if the object and the provided object do not intersect" do
+        let(:cuboid_one) {Cuboid.new({'x'=> 1,'y'=> 1, 'z'=> 1, 'length' => 5, 'height' => 6, 'width' => 7})}  
+        let(:cuboid_two) {Cuboid.new({'x'=> 20,'y'=> 2, 'z'=> 0, 'length' => 2, 'height' => 2, 'width' => 10})}
+        expect(cuboid_one.intersects?(cuboid_two)).to be_false  
+        expect(cuboid_two.intersects?(cuboid_one)).to be_false
+    end
   end
 
   context "#rotate!" do
