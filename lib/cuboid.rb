@@ -1,17 +1,6 @@
-
 class Cuboid
   
-  #BEGIN public methods that should be your starting point
-
-  def move_to!(x, y, z)
-  end
+  REQUIRED_PARAMETERS = ['x', 'y', 'z', 'length', 'width', 'height']
   
-  def vertices
-  end
-  
-  #returns true if the two cuboids intersect each other.  False otherwise.
-  def intersects?(other)
-  end
-
-  #END public methods that should be your starting point  
+  attr_reader :origin, :length, :width, :height
 end
