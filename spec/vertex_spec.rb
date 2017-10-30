@@ -13,9 +13,9 @@ describe Vertex do
     end
 
     it "requires non-negative integers as parameters" do
-      expect(Vertex.new({'x'=> -1,'y'=> 0, 'z'=> 0}).to raise_error
-      expect(Vertex.new({'x'=> 0,'y'=> -1, 'z'=> 0}).to raise_error
-      expect(Vertex.new({'x'=> 0,'y'=> 0, 'z'=> -1}).to raise_error
+      expect(Vertex.new({'x'=> -1,'y'=> 0, 'z'=> 0})).to raise_error
+      expect(Vertex.new({'x'=> 0,'y'=> -1, 'z'=> 0})).to raise_error
+      expect(Vertex.new({'x'=> 0,'y'=> 0, 'z'=> -1})).to raise_error
     end
   end
 
