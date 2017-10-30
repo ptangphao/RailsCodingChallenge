@@ -50,7 +50,30 @@ describe Vertex do
   end
 
   context "#move!" do
+    it "requires parameters" do
+      expect(vertex.move!).to raise_error
+    end
+
+    it "requires non-negative integers as parameters" do
+      expect(vertex.move!(3,4,5)).to_not raise_error
+    end
+
+    it "should move the x-axis value" do
+      vertex.move!(3,4,5)
+      expect(vertex.x).to eq 3
+    end
+
+    it "should move the y-axis value" do
+      vertex.move!(3,4,5)
+      expect(vertex.y).to eq 4
+    end
+
+    it "should move the z-axis value" do
+      vertex.move!(3,4,5)
+      expect(vertex.z).to eq 5
+    end
   end
+
   context "#to_s" do
   end
 end
