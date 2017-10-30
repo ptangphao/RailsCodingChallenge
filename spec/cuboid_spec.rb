@@ -99,12 +99,27 @@ describe Cuboid do
   end
 
   context "#rotate!" do
+    it "swaps width and length values" do
+      cuboid.rotate!
+      expect(cuboid.width).to eq  5
+      expect(cuboid.length).to eq 7
+    end
   end
 
   context "#rotate2!" do
+    it "swaps width and height values" do
+      cuboid.rotate2!
+      expect(cuboid.width).to eq 6
+      expect(cuboid.height).to eq 7
+    end
   end
 
   context "#rotate3!" do
+    it "swaps length and height values" do
+      cuboid.rotate3!
+      expect(cuboid.length).to eq 6
+      expect(cuboid.height).to eq 5
+    end
   end
 
   context "#to_s" do
