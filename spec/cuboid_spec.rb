@@ -28,9 +28,9 @@ describe Cuboid do
     end
 
     it "returns a Vertex with values matching initialization parameters" do
-      expect(cuboid.origin.x = 0).to be_true
-      expect(cuboid.origin.y = 1).to be_true
-      expect(cuboid.origin.z = 2).to be_true
+      expect(cuboid.origin.x == 0).to be true
+      expect(cuboid.origin.y == 1).to be true
+      expect(cuboid.origin.z == 2).to be true
     end
 
     it "cannot be directly modified" do
@@ -50,7 +50,7 @@ describe Cuboid do
 
   context "#width" do
     it "returns the width value" do
-      expect(cuboid.width).to eq 6
+      expect(cuboid.width).to eq 7
     end
 
     it "cannot be directly modified" do
