@@ -23,7 +23,15 @@ describe Cuboid do
   end
 
   context "#origin" do
-    
+    it "should return a Vertex object" do
+      expect(cuboid.origin).to be_an_instance_of Vertex
+    end
+
+    it "should return a Vertex with values matching initialization parameters" do
+      expect(cuboid.origin.x = 0).to be_true
+      expect(cuboid.origin.y = 1).to be_true
+      expect(cuboid.origin.z = 2).to be_true
+    end
   end
 
   context "#length" do

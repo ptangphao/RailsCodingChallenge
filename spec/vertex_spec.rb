@@ -24,7 +24,7 @@ describe Vertex do
       expect(vertex.x).to eq 0
     end
 
-    it "can not be modified" do
+    it "cannot be modified" do
       expect{vertex.x = 4}.to raise_error(NoMethodError)
     end
   end
@@ -34,7 +34,7 @@ describe Vertex do
       expect(vertex.y).to eq 1
     end
 
-    it "can not be modified" do
+    it "cannot be modified" do
       expect{vertex.y = 4}.to raise_error(NoMethodError)
     end
   end
@@ -44,7 +44,7 @@ describe Vertex do
       expect(vertex.z).to eq 2
     end
 
-    it "can not be modified" do
+    it "cannot be modified" do
       expect{vertex.z = 4}.to raise_error(NoMethodError)
     end
   end
