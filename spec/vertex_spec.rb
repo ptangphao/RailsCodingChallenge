@@ -75,5 +75,8 @@ describe Vertex do
   end
 
   context "#to_s" do
+    it "should print the Vertex as a formatted string" do
+      expect(puts vertex).to output('(0,1,2)').to_stdout
+    end
   end
 end
