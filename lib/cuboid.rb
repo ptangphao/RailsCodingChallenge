@@ -23,6 +23,14 @@ class Cuboid
     return vertices_list
   end
 
+  def intersects?(other)
+    extreme_vertices = [[@origin, vertices.last, other.origin, other.vertices.last],[other.origin, other.vertices.last, @origin, vertices.last]]
+    x_lists = extreme_vertices.map{|list| list.map{|vertex| vertex.x}}
+    y_lists = extreme_vertices.map{|list| list.map{|vertex| vertex.y}}
+    z_lists = extreme_vertices.map{|list| list.map{|vertex| vertex.z}}
+    return !(x_lists.include?(x_lists.first.sort) || y_lists.include?(y_lists.first.sort) || z_lists.include?(z_lists.first.sort))
+  end
+
   def rotate!
     @width, @length = @length, @width
   end
