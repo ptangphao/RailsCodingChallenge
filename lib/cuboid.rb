@@ -5,7 +5,7 @@ class Cuboid
   attr_reader :origin, :length, :width, :height
 
   def initialize(params = {})
-    # params_check(params)
+    params_check(params)
     @origin = Vertex.new('x' => params['x'], 'y' => params['y'], 'z' => params['z'])
     @length = params['length']
     @width = params['width']
@@ -33,5 +33,25 @@ class Cuboid
 
   def rotate3!
     @length, @height = @height, @length
+  end
+
+  def to_s
+    "A 3-dimensional object with an origin at #{self.origin.to_s} with a width of #{self.width}, length of #{self.length}, and height of #{self.height}."
+  end
+
+  private
+
+  def keys_check(params)
+    REQUIRED_PARAMETERS.each{|k| raise "Missing required parameter: #{k}" if !params.keys.include?(k)}
+  end
+  
+  def dimensions_check(params)
+    dimensions = {'length' => params['length'], 'width' => params['width'], 'height' => params['height']}
+    dimensions.each {|k,v| raise "Invalid input type (#{v}). #{k} must be a positive integer" if !((v.is_a? Integer) && v > 0)}
+  end
+
+  def params_check(params)
+    keys_check(params)
+    dimensions_check(params)
   end
 end
