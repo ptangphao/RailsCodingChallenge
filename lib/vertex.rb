@@ -13,4 +13,8 @@ class Vertex
     # destination_check(x,y,z)
     @x, @y, @z = x, y, z
   end
+
+  def to_s
+    "(#{self.x},#{self.y},#{self.z})"
+  end
 end
