@@ -17,4 +17,19 @@ class Vertex
   def to_s
     "(#{self.x},#{self.y},#{self.z})"
   end
+
+  private
+
+  def required_params(params)
+  end
+
+  def valid_params(params)
+  end
+
+  def params_check(params)
+  end
+
+  def destination_check(x,y,z)
+    
+  end
 end
