@@ -82,6 +82,17 @@ describe Cuboid do
   end
 
   context "#vertices" do
+    it "returns a list" do
+      expect(cuboid.vertices).to be_an_instance_of Array
+    end
+
+    it "returns a list of Vertex objects" do
+      expect(cuboid.vertices.first).to be_an_instance_of Vertex
+    end
+
+    it "returns a list that contains 8 objects" do
+      expect(cuboid.vertices.length).to eq 8
+    end
   end
 
   context "#intersects?" do
