@@ -22,4 +22,16 @@ class Cuboid
     vertices_list = vertices_formulaes.map{|vertex| Vertex.new({'x' => vertex[0], 'y' => vertex[1], 'z' => vertex[2]})}
     return vertices_list
   end
+
+  def rotate!
+    @width, @length = @length, @width
+  end
+
+  def rotate2!
+    @width, @height = @height, @width
+  end
+
+  def rotate3!
+    @length, @height = @height, @length
+  end
 end
