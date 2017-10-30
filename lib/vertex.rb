@@ -8,4 +8,9 @@ class Vertex
     # params_check(params)
     @x, @y, @z = params['x'], params['y'], params['z']
   end
+
+  def move!(x,y,z)
+    # destination_check(x,y,z)
+    @x, @y, @z = x, y, z
+  end
 end
