@@ -69,15 +69,15 @@ describe Cuboid do
   end
 
   context "#move_to!" do
-    cuboid.move_to!(0,0,0)
     it "requires parameters" do
       expect{cuboid.move_to!}.to raise_error(ArgumentError)
     end
 
     it "changes the origin" do
+      cuboid.move_to!(0,1,2)
       expect(cuboid.origin.x).to eq 0
-      expect(cuboid.origin.y).to eq 0
-      expect(cuboid.origin.z).to eq 0
+      expect(cuboid.origin.y).to eq 1
+      expect(cuboid.origin.z).to eq 2
     end
   end
 
@@ -108,5 +108,8 @@ describe Cuboid do
   end
 
   context "#to_s" do
+    it "prints the Cuboid as a formatted string" do
+      expect{print cuboid}.to output("A 3-dimensional object with an origin at (0,1,2) with a width of 7, length of 5, and height of 6.").to_stdout
+    end
   end
 end
