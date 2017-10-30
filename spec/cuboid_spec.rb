@@ -69,6 +69,16 @@ describe Cuboid do
   end
 
   context "#move_to!" do
+    cuboid.move_to!(0,0,0)
+    it "requires parameters" do
+      expect{cuboid.move_to!}.to raise_error(ArgumentError)
+    end
+
+    it "changes the origin" do
+      expect(cuboid.origin.x).to eq 0
+      expect(cuboid.origin.y).to eq 0
+      expect(cuboid.origin.z).to eq 0
+    end
   end
 
   context "#vertices" do
