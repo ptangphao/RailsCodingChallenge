@@ -9,13 +9,13 @@ describe Vertex do
     end
 
     it "requires parameters" do
-      expect(Vertex.new).to raise_error
+      expect{Vertex.new}.to raise_error(RuntimeError)
     end
 
     it "requires non-negative integers as parameters" do
-      expect(Vertex.new({'x'=> -1,'y'=> 0, 'z'=> 0})).to raise_error
-      expect(Vertex.new({'x'=> 0,'y'=> -1, 'z'=> 0})).to raise_error
-      expect(Vertex.new({'x'=> 0,'y'=> 0, 'z'=> -1})).to raise_error
+      expect{Vertex.new({'x'=> -1,'y'=> 0, 'z'=> 0})}.to raise_error(RuntimeError)
+      expect{Vertex.new({'x'=> 0,'y'=> -1, 'z'=> 0})}.to raise_error(RuntimeError)
+      expect{Vertex.new({'x'=> 0,'y'=> 0, 'z'=> -1})}.to raise_error(RuntimeError)
     end
   end
 
@@ -25,7 +25,7 @@ describe Vertex do
     end
 
     it "can not be modified" do
-      expect(vertex.x = 4).to raise_error
+      expect{vertex.x = 4}.to raise_error(NoMethodError)
     end
   end
 
@@ -35,7 +35,7 @@ describe Vertex do
     end
 
     it "can not be modified" do
-      expect(vertex.y = 4).to raise_error
+      expect{vertex.y = 4}.to raise_error(NoMethodError)
     end
   end
 
@@ -45,17 +45,17 @@ describe Vertex do
     end
 
     it "can not be modified" do
-      expect(vertex.z = 4).to raise_error
+      expect{vertex.z = 4}.to raise_error(NoMethodError)
     end
   end
 
   context "#move!" do
     it "requires parameters" do
-      expect(vertex.move!).to raise_error
+      expect{vertex.move!}.to raise_error(ArgumentError)
     end
 
     it "requires non-negative integers as parameters" do
-      expect(vertex.move!(3,4,5)).to_not raise_error
+      expect{vertex.move!(3,4,5)}.to_not raise_error
     end
 
     it "should move the x-axis value" do
@@ -76,7 +76,7 @@ describe Vertex do
 
   context "#to_s" do
     it "should print the Vertex as a formatted string" do
-      expect(puts vertex).to output('(0,1,2)').to_stdout
+      expect(print vertex).to output('(0,1,2)').to_stdout
     end
   end
 end
