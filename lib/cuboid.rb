@@ -11,4 +11,8 @@ class Cuboid
     @width = params['width']
     @height = params['height']
   end
+
+  def move_to!(x, y, z)
+    @origin.move!(x,y,z)
+  end
 end
