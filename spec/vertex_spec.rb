@@ -20,7 +20,7 @@ describe Vertex do
   end
 
   context "#x" do
-    it "should return the x-axis value" do
+    it "returns the x-axis value" do
       expect(vertex.x).to eq 0
     end
 
@@ -30,7 +30,7 @@ describe Vertex do
   end
 
   context "#y" do
-    it "should return the y-axis value" do
+    it "returns the y-axis value" do
       expect(vertex.y).to eq 1
     end
 
@@ -40,7 +40,7 @@ describe Vertex do
   end
 
   context "#z" do
-    it "should return the z-axis value" do
+    it "returns the z-axis value" do
       expect(vertex.z).to eq 2
     end
 
@@ -59,24 +59,24 @@ describe Vertex do
       expect{vertex.move!(-3,4,5)}.to raise_error(RuntimeError)
     end
 
-    it "should move the x-axis value" do
+    it "moves the x-axis value" do
       vertex.move!(3,4,5)
       expect(vertex.x).to eq 3
     end
 
-    it "should move the y-axis value" do
+    it "moves the y-axis value" do
       vertex.move!(3,4,5)
       expect(vertex.y).to eq 4
     end
 
-    it "should move the z-axis value" do
+    it "moves the z-axis value" do
       vertex.move!(3,4,5)
       expect(vertex.z).to eq 5
     end
   end
 
   context "#to_s" do
-    it "should print the Vertex as a formatted string" do
+    it "prints the Vertex as a formatted string" do
       expect{print vertex}.to output('(0,1,2)').to_stdout
     end
   end
