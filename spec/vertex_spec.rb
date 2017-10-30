@@ -22,7 +22,17 @@ describe Vertex do
   context "#x" do
     it "should return the x-axis value" do
     end
-  end 
+  end
+
+  context "#y" do
+    it "should return the y-axis value" do
+    end
+  end
+
+  context "#z" do
+    it "should return the z-axis value" do
+    end
+  end
 
   context "#move!" do
   end
