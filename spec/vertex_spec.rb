@@ -56,6 +56,7 @@ describe Vertex do
 
     it "requires non-negative integers as parameters" do
       expect{vertex.move!(3,4,5)}.to_not raise_error
+      expect{vertex.move!(-3,4,5)}.to raise_error(RuntimeError)
     end
 
     it "should move the x-axis value" do
