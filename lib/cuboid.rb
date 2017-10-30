@@ -30,9 +30,9 @@ class Cuboid
     # This method utilizes a mathematical principle for determining whether 2 ranges overlap within each axis. 
     # The primary principle is that in order for an overlap to exist, atleast 1 value (the min or the max) of an object must be between the min and max of the other object.
     # To do this, we are creating 2 subarrays within an array. 
-    # Each of these subarrays represents an order in which the above principle is not demonstrated, thus making intersection impossible.
+    # Each of these subarrays represents one of the two orders in which the above principle is not demonstrated, thus making intersection impossible.
     extreme_vertices = [[@origin, vertices.last, other.origin, other.vertices.last],[other.origin, other.vertices.last, @origin, vertices.last]]
-    # In each of these lines, we are mapping over the array and the subarrays to obtain an array with two subarrays containing the x/y/z values of the origin and the furthest point from the origin (i.e. the range of each object with respect to that dimension).
+    # In each of the following lines, we are mapping over the array and the subarrays to obtain an array with two subarrays containing the x/y/z values of the origin and the furthest point from the origin (i.e. the range of each object with respect to that dimension).
     x_lists = extreme_vertices.map{|list| list.map{|vertex| vertex.x}}
     y_lists = extreme_vertices.map{|list| list.map{|vertex| vertex.y}}
     z_lists = extreme_vertices.map{|list| list.map{|vertex| vertex.z}}
@@ -43,7 +43,7 @@ class Cuboid
   end
 
   def rotate!
-    # based on our definition of the origin, using this method of rotation prevents you from hitting a wall since origin axis can not be negative. 
+    # based on our definition of the origin, using this method of rotation prevents you from hitting a wall since each origin axis cannot be negative. 
     @width, @length = @length, @width
   end
 
