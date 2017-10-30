@@ -1,7 +1,7 @@
 require 'cuboid'
 
 describe Cuboid do
-  let(:cuboid) {Cuboid.new({'x'=> 0,'y'=> 1, 'z'=> 2, 'length' => 5, 'height' => 5, 'width' => 5})}
+  let(:cuboid) {Cuboid.new({'x'=> 0,'y'=> 1, 'z'=> 2, 'length' => 5, 'height' => 6, 'width' => 7})}
   
   context "#initialize" do
     it "creates a Cuboid object" do
@@ -34,18 +34,38 @@ describe Cuboid do
     end
 
     it "cannot be directly modified" do
-      expect{cuboid.origin = Vertex.new({'x'=> 0,'y'=> 1, 'z'=> 2}}.to raise_error(NoMethodError)
+      expect{cuboid.origin = Vertex.new({'x'=> 0,'y'=> 1, 'z'=> 2})}.to raise_error(NoMethodError)
     end
   end
 
   context "#length" do
-    
+    it "returns the length value" do
+      expect(cuboid.length).to eq 5
+    end
+
+    it "cannot be directly modified" do
+      expect{cuboid.length = 1}.to raise_error(NoMethodError)
+    end
   end
 
   context "#width" do
+    it "returns the width value" do
+      expect(cuboid.width).to eq 6
+    end
+
+    it "cannot be directly modified" do
+      expect{cuboid.width = 1}.to raise_error(NoMethodError)
+    end
   end 
 
   context "#height" do
+    it "returns the height value" do
+      expect(cuboid.height).to eq 6
+    end
+
+    it "cannot be directly modified" do
+      expect{cuboid.height = 1}.to raise_error(NoMethodError)
+    end
   end
 
   context "#move_to!" do
